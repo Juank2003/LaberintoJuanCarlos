@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #CACBA7;
+}
+
+.juego{
+     width: 65vmin;
+     height: 70vmin;
+     display: flex;
+     flex-direction: column;
+     background: #394F27;
+     border-radius: 7px;
+ }
+
+.detallesdeljuego{
+    font-size: medium;
+    font-weight: 500;
+    padding: 20px 20px;
+    display: flex;
+    justify-content: space-between;
+    color: aliceblue;
+
+}
+
+.tablero{
+    width: 100%;
+    height: 100%;
+    background: #629460;
+    display: grid;
+    grid-template: repeat(10, 1fr) / repeat(10, 1fr)
+}
+
+.tablero .personaje{
+    background: #1D787F;
+    border: black;
+}
+.tablero .llave{
+    background: #d08888;
+    border: black;
+
+}
+
+.tablero .pared{
+    background: #b02525;
+    border: black;
+}
