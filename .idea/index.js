@@ -21,17 +21,17 @@ const paredXY = (x, y) => {
     return false;
 };
 
-const cambiarDireccion = (event) => {
+const cambiarDireccion = (i) => {
     let paredX = personajeX;
     let paredY = personajeY;
 
-    if (event.key === 'ArrowUp' && personajeX > 1 && !paredXY(personajeX -1, personajeY)) {
+    if (i.key === 'ArrowUp' && personajeX > 1 && !paredXY(personajeX -1, personajeY)) {
         paredX -= 1;
-    } else if (event.key === 'ArrowDown' && personajeX < 10 && !paredXY(personajeX + 1, personajeY)) {
+    } else if (i.key === 'ArrowDown' && personajeX < 10 && !paredXY(personajeX + 1, personajeY)) {
         paredX += 1;
-    } else if (event.key === 'ArrowLeft' && personajeY > 1 && !paredXY(personajeX, personajeY - 1)) {
+    } else if (i.key === 'ArrowLeft' && personajeY > 1 && !paredXY(personajeX, personajeY - 1)) {
         paredY -= 1;
-    } else if (event.key === 'ArrowRight' && personajeY < 10 && !paredXY(personajeX, personajeY + 1)) {
+    } else if (i.key === 'ArrowRight' && personajeY < 10 && !paredXY(personajeX, personajeY + 1)) {
         paredY += 1;
     }
 
