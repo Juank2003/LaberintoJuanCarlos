@@ -40,16 +40,25 @@ body{
 }
 
 .tablero .personaje{
-    background: #1D787F;
-    border: black;
+    background-image: url('img/caballero.png');
+    background-size: cover;
+    background-position: center;
+    width: 61px;
+    height: 61px;
 }
 .tablero .llave{
-    background: #d08888;
-    border: black;
+    background-image: url('img/llave.png');
+    background-size: cover;
+    background-position: center;
+    width: 61px;
+    height: 61px;
 
 }
 
 .tablero .pared{
-    background: #b02525;
-    border: black;
+    background-image: url('img/cobertura.png');
+    background-size: cover;
+    background-position: center;
+    width: 61px;
+    height: 61px;
 }
