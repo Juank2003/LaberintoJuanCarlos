@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -51,8 +53,16 @@ body{
     width: 50px;
     height: 50px;
 }
-.tablero .llave{
+.tablero .princesa{
     background-image: url('img/princesa.png');
+    background-size: cover;
+    background-position: center;
+    width: 50px;
+    height: 50px;
+
+}
+.tablero .llave{
+    background-image: url('img/llave.png');
     background-size: cover;
     background-position: center;
     width: 50px;
@@ -66,4 +76,77 @@ body{
     background-position: center;
     width: 50px;
     height: 50px;
+}
+
+.tablero .paredMover{
+    background-image: url('img/cobertura.png');
+    background-size: cover;
+    background-position: center;
+    width: 50px;
+    height: 50px;
+}
+/*-------------------*/
+
+.menu{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 95vmin;
+    height: 97vmin;
+
+}
+.menu h1 {
+    margin: auto;
+    font-family: 'Press Start 2P', cursive;
+    color: #0e8011; /* Color gris oscuro, neutral */
+    text-shadow: 2px 2px 4px rgb(0, 0, 0); /* Sombra */
+    font-size: 50px;
+    text-align: center;
+    padding: 20px;
+}
+
+
+.botonJugar {
+    font-family: 'Press Start 2P', cursive;
+    background-color: #4CAF50; /* Verde */
+    color: white;
+    padding: 20px 40px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    transition: background-color 0.3s; /* Transición suave del color */
+    border-radius: 15px;
+}
+
+.botonJugar:hover {
+    background-color: #3e8e41; /* Un tono de verde más oscuro */
+}
+
+
+.instrucciones {
+    width: 70%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgb(220, 220, 220, 0.8);
+    margin: auto;
+    padding: 10px;
+    border-radius: 20px;
+    border: black 2px solid;
+}
+
+.intrucciones, h2{
+    font-family: 'Press Start 2P', cursive;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 30px;
+
+}
+
+.intrucciones, p{
+    font-family: 'Press Start 2P', cursive;
+    font-size: 15px;
+
 }
