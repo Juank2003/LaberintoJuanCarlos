@@ -6,19 +6,45 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="juego">
+    <section id="pantallaJuego">
 
-        <div class="detallesdeljuego">
-            <div>Tiempo <span id="segundos"> 15</span> s</div>
+        <div class="juego">
 
-            <div>Vidas <span id="vidas"> 0</span></div>
+            <div class="detallesdeljuego">
+                <div id="tiempo ">Tiempo <span id="segundos"> 15</span> s</div>
+
+                <div>Vidas <span id="vidas"> 0</span></div>
+            </div>
+
+            <div class="tablero">
+                <div id="contenedor"></div>
+
+            </div>
+        </div>
+        <div class="noJuego">
+            <div class="botonesJuego">
+                <button class="botonJugar" onclick="window.location.href='index.html';">Reiniciar</button>
+                <button class="botonJugar" onclick="window.location.href='menu.html';">Menu</button>
+            </div>
+            <div class="imagenInstrucciones">
+
+                <h2>Instrucciones:</h2>
+                Usa las flechas del teclado:
+                <br></br>
+                Flecha de arriba: Avanza hacia el norte.
+                <br></br>
+                Flecha de abajo: Avanza hacia el sur.
+                <br></br>
+                Flecha derecha: Avanza hacia el este.
+                <br></br>
+                Flecha izquierda: Avanza hacia el oeste.
+                <br></br>
+                <img src="img/botones.png" width="200px" height="200px">
+            </div>
         </div>
 
-        <div class="tablero">
-            <div id="contenedor"></div>
 
-        </div>
-    </div>
+    </section>
 <script src="index.js"></script>
 </body>
 </html>
