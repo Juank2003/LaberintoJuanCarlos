@@ -19,6 +19,8 @@ const paredes = [
     [1, 9], [1, 10], [1, 11], [1, 12], [1, 13], [1, 14], [1, 15], [1, 16],];
 
 
+
+
 const paredXY = (x, y) => {
     for (let i = 0; i < paredes.length; i++) {
         if (paredes[i][0] === x && paredes[i][1] === y) {
