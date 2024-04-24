@@ -85,8 +85,14 @@ body{
 }
 
 /*-------------------------------------------------------*/
+
+.personaje{
+    background-size: cover;
+    background-position: center;
+    width: 50px;
+    height: 50px;
+}
 .tablero .personaje{
-    background-image: url('img/caballero.png');
     background-size: cover;
     background-position: center;
     width: 50px;
@@ -202,3 +208,6 @@ body{
     left: 50%;
     transform: translate(-50%,-50%);
 }
+
+/*-------------------------------------------------------*/
+

@@ -8,7 +8,20 @@
 <body>
     <section class="menu">
         <h1>El Laberinto</h1>
-        <button class="botonJugar" onclick="window.location.href='index.html';">Jugar</button>
+        <h2>Elige tu personaje</h2>
+
+        <select id="personaje">
+            <option value="img/caballero.png">Caballero</option>
+            <option value="img/dragon.png">Dragón</option>
+            <option value="img/mago.png">Mago</option>
+            <option value="img/rey.png">Rey</option>
+            <option value="img/gnomo.png">Gnomo</option>
+            <option value="img/verdugo.png">Verdugo</option>
+        </select>
+        <div id="previsualizacionPersonaje" class="previsualizacion"></div>
+
+        <button class="botonJugar" onclick="elegirPersonaje()">Jugar</button>
+
         <div class="instrucciones">
             <h2>Instrucciones:</h2>
             <p>
@@ -35,5 +48,7 @@
             </p>
         </div>
     </section>
+    <script src="index.js"></script>
+
 </body>
 </html>
