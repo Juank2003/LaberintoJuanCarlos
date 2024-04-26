@@ -199,15 +199,60 @@ body{
 
 #popup {
     border: black 2px solid;
-    width: 300px;
+    width: 1000px;
     height: 200px;
-    background: #030000;
+    background: #4CAF50;
     position: absolute;
     display: none;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
+    text-align: center;
+    border-radius: 20px ;
 }
-
+#popup h1 {
+    margin-top: 50px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 80px;
+    color: aliceblue;
+    padding: 10px;
+}
+#popupPerder {
+    border: black 2px solid;
+    width: 1000px;
+    height: 200px;
+    background: #4CAF50;
+    position: absolute;
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    border-radius: 20px ;
+}
+#popupPerder h1 {
+    margin-top: 50px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 80px;
+    color: aliceblue;
+    padding: 10px;
+}
 /*-------------------------------------------------------*/
-
+select{
+    font-family: 'Press Start 2P', cursive;
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 10px;
+    background-color: #4CAF50;
+    color: aliceblue;
+    border: black 2px solid;
+}
+option{
+    font-family: 'Press Start 2P', cursive;
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    border: black 2px solid;
+    margin: 10px;
+}
