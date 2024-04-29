@@ -1,4 +1,4 @@
-
+//Definimos las variables y constantes del Juego
 const TABLERO = document.querySelector('.tablero');
 
 const personajeSeleccionado = localStorage.getItem('personajeSeleccionado');
@@ -9,7 +9,10 @@ let movimientoX = 0, movimientoY = 0;
 let llaveX = 14, llaveY = 9;
 let vidas = 3; // Vidas
 let paredMoverX = 16, paredMoverY = 12;
+let intervalo;
 
+
+//Creamos un array con las posiciones de las paredes
 const paredes = [
     [3, 2], [3, 3], [3, 5], [4, 3], [5, 3], [4, 5], [3, 6], [3, 7], [3, 8], [3, 10], [3, 11], [3, 13], [3, 14], [3, 15], [2, 10], [4, 8], [4, 13], [4, 15],
     [5, 8], [5, 9], [5, 10], [5, 11], [5, 12], [5, 13], [5, 15], [7, 16], [7, 15], [7, 14], [7, 13], [6, 13], [5, 5], [5, 6], [6, 3], [7, 3], [7, 4], [7, 5], [7, 7], [7, 8], [6, 8],
@@ -22,30 +25,33 @@ const paredes = [
     [1, 9], [1, 10], [1, 11], [1, 12], [1, 13], [1, 14], [1, 15], [1, 16],];
 
 
-
-
+//Funciones para mostrar la previsualizacion del personaje a la hora de elegir
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('personaje').addEventListener('change', mostrarPrevisualizacion);
-    mostrarPrevisualizacion(); // Esto establecerá la previsualización del caballero por defecto al cargar la página
+    mostrarPrevisualizacion();
 });
 
-
-function mostrarPrevisualizacion() {
-    let seleccion = document.getElementById('personaje').value;
+// Establecerá la previsualización del caballero por defecto al cargar la página
+ mostrarPrevisualizacion=()=> {
+    let eleccion = document.getElementById('personaje').value;
     let previsualizacion = document.getElementById('previsualizacionPersonaje');
-    previsualizacion.style.backgroundImage = `url('${seleccion}')`;
+
+    // Cambiar el fondo de la previsualización
+    previsualizacion.style.backgroundImage = `url('${eleccion}')`;
     previsualizacion.style.backgroundSize = 'cover';
     previsualizacion.style.backgroundPosition = 'center';
     previsualizacion.style.width = '100px';
     previsualizacion.style.height = '100px';
 }
 
-function elegirPersonaje() {
+//Funciona para elegir personaje, este se almacena en el locaStorage del navegador para poder ser usado en el juego.
+const elegirPersonaje=()=> {
     let personajeSeleccionado = document.getElementById('personaje').value;
     localStorage.setItem('personajeSeleccionado', personajeSeleccionado);
     window.location.href = 'index.html';
 }
 
+//Funcion para asignar las coordenadas x y al array de las paredes
 const paredXY = (x, y) => {
     for (let i = 0; i < paredes.length; i++) {
         if (paredes[i][0] === x && paredes[i][1] === y) {
@@ -55,10 +61,12 @@ const paredXY = (x, y) => {
     return false;
 };
 
+//Funcion para cambiar la direccion del personaje
 const cambiarDireccion = (i) => {
     let paredX = personajeX;
     let paredY = personajeY;
 
+    //Delimitadores de movimiento
     if (i.key === 'ArrowUp' && !paredXY(personajeX -1, personajeY)) {
         paredX -= 1;
     } else if (i.key === 'ArrowDown' && !paredXY(personajeX + 1, personajeY)) {
@@ -68,14 +76,16 @@ const cambiarDireccion = (i) => {
     } else if (i.key === 'ArrowRight' && !paredXY(personajeX, personajeY + 1)) {
         paredY += 1;
     }
-
+    // Si el personaje no se mueve, no se actualiza la posición
     if (paredX !== personajeX || paredY !== personajeY) {
         personajeX = paredX;
         personajeY = paredY;
     }
+    // Si el personaje llega a la princesa, ganas el juego
     if (personajeX === princesaX && personajeY === princesaY) {
         ganarJuego();
     }
+    // Si el personaje llega a la llave, coge la llave
     if (personajeX === llaveX && personajeY === llaveY) {
         cogerLlave();
     }
@@ -83,15 +93,16 @@ const cambiarDireccion = (i) => {
     iniciarJuego();
 };
 
-let intervalo;
+
+//Funcion que maneja el tiempo y las vidas con setInterval, cada 15 segundos si no llegas al objetivo pierdes una vida
 const contador = () => {
     let tiempo = 15;
 
     intervalo = setInterval(function() {
-        tiempo--; // Decrementamos el tiempo
+        tiempo--;
         document.getElementById('segundos').textContent = tiempo; // Actualizamos el elemento HTML
         document.getElementById('vidas').textContent = vidas; // Actualizamos el elemento HTML
-
+        // Si el tiempo llega a 0, pierdes una vida, si llegas a 0 vidas pierdes el juego.
         if (tiempo <= 0) {
             clearInterval(intervalo);
             personajeX = 2;
@@ -107,15 +118,17 @@ const contador = () => {
     }, 1000);
 };
 
+//Funcion lanzadora del juego, carga los divs con las posiciones y las coordenadas iniciales
 const iniciarJuego = () => {
-
+    //A personajeXY le sumamos el movimientoX y movimientoY establecido en la funcion cambiardireccion()
     personajeX += movimientoX;
     personajeY += movimientoY;
 
+    //Establecemos el movimiento a 0
     movimientoX = 0;
     movimientoY = 0;
 
-
+    // Dibujamos el tablero con los elemnetos del juego
     let xy = `<div class="personaje" style="grid-area: ${personajeX} / ${personajeY}; background-image: url('${personajeSeleccionado}');"></div>`;
     xy += `<div class="princesa" style="grid-area: ${princesaX} / ${princesaY};"></div>`;
     xy += `<div class="llave" style="grid-area: ${llaveX} / ${llaveY};"></div>`;
@@ -124,29 +137,30 @@ const iniciarJuego = () => {
     for (let i = 0; i < paredes.length; i++) {
         xy += `<div class="pared" style="grid-area: ${paredes[i][0]} / ${paredes[i][1]};"></div>`;
     }
-
+    // Mostramos el tablero
     TABLERO.innerHTML = xy;
 };
 
-
+//Funcion para mostrar que perdiste
 const perderJuego = () => {
     let perder = document.getElementById('popupPerder');
     perder.style.display = 'block';
-
-
 }
 
+//Funcion para mostrar que ganaste
 const ganarJuego = () => {
     clearInterval(intervalo);
     let ganar = document.getElementById('popup');
     ganar.style.display = 'block';
 }
 
+//Funcion que cambia la posicion de la llave
 const cogerLlave = () => {
     paredMoverX = 15;
     paredMoverY = 13;
 }
 
+//Lanzadores
 document.addEventListener('keydown', cambiarDireccion);
 iniciarJuego();
 contador();
