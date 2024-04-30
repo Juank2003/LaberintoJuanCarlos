@@ -6,7 +6,7 @@ const personajeSeleccionado = localStorage.getItem('personajeSeleccionado');
 let personajeX = 2, personajeY = 2;
 let princesaX = 16, princesaY = 16;
 let llaveX = 14, llaveY = 9;
-let vidas = 3; // Vidas
+let vidas = 3;
 let paredMoverX = 16, paredMoverY = 12;
 let intervalo;
 
