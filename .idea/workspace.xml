@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2669aaa-32f8-494d-8e1c-c5eb4f3dd23c" name="Changes" comment="13">
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-    </list>
+    <list default="true" id="f2669aaa-32f8-494d-8e1c-c5eb4f3dd23c" name="Changes" comment="13" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -87,7 +85,7 @@
       <workItem from="1714144292837" duration="185000" />
       <workItem from="1714324299332" duration="2220000" />
       <workItem from="1714382721875" duration="5550000" />
-      <workItem from="1714485233119" duration="1103000" />
+      <workItem from="1714485233119" duration="1757000" />
     </task>
     <task id="LOCAL-00001" summary="2">
       <option name="closed" value="true" />
@@ -209,7 +207,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714486346675</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="13">
+      <option name="closed" value="true" />
+      <created>1714486677844</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1714486677844</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -144,6 +144,7 @@ const ganarJuego = () => {
     clearInterval(intervalo);
     let ganar = document.getElementById('popup');
     ganar.style.display = 'block';
+
 }
 
 //Funcion que cambia la posicion de la llave
