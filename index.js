@@ -62,23 +62,23 @@ const paredXY = (x, y) => {
 
 //Funcion para cambiar la direccion del personaje
 const cambiarDireccion = (i) => {
-    let paredX = personajeX;
-    let paredY = personajeY;
+    let movimientoX = personajeX;
+    let movimientoY = personajeY;
 
     //Delimitadores de movimiento
     if (i.key === 'ArrowUp' && !paredXY(personajeX -1, personajeY)) {
-        paredX -= 1;
+        movimientoX -= 1;
     } else if (i.key === 'ArrowDown' && !paredXY(personajeX + 1, personajeY)) {
-        paredX += 1;
+        movimientoX += 1;
     } else if (i.key === 'ArrowLeft' && !paredXY(personajeX, personajeY - 1)) {
-        paredY -= 1;
+        movimientoY -= 1;
     } else if (i.key === 'ArrowRight' && !paredXY(personajeX, personajeY + 1)) {
-        paredY += 1;
+        movimientoY += 1;
     }
     // Si el personaje no se mueve, no se actualiza la posición
-    if (paredX !== personajeX || paredY !== personajeY) {
-        personajeX = paredX;
-        personajeY = paredY;
+    if (movimientoX !== personajeX || movimientoY !== personajeY) {
+        personajeX = movimientoX;
+        personajeY = movimientoY;
     }
     // Si el personaje llega a la princesa, ganas el juego
     if (personajeX === princesaX && personajeY === princesaY) {
