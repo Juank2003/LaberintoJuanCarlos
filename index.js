@@ -100,8 +100,8 @@ const contador = () => {
 
     intervalo = setInterval(function() {
         tiempo--;
-        document.getElementById('segundos').textContent = tiempo; // Actualizamos el elemento HTML
-        document.getElementById('vidas').textContent = vidas; // Actualizamos el elemento HTML
+        document.getElementById('segundos').textContent = tiempo; // Actualizar html
+        document.getElementById('vidas').textContent = vidas;
         // Si el tiempo llega a 0, pierdes una vida, si llegas a 0 vidas pierdes el juego.
         if (tiempo <= 0) {
             clearInterval(intervalo);
@@ -120,13 +120,6 @@ const contador = () => {
 
 //Funcion lanzadora del juego, carga los divs con las posiciones y las coordenadas iniciales
 const iniciarJuego = () => {
-    //A personajeXY le sumamos el movimientoX y movimientoY establecido en la funcion cambiardireccion()
-    personajeX += movimientoX;
-    personajeY += movimientoY;
-
-    //Establecemos el movimiento a 0
-    movimientoX = 0;
-    movimientoY = 0;
 
     // Dibujamos el tablero con los elemnetos del juego
     let xy = `<div class="personaje" style="grid-area: ${personajeX} / ${personajeY}; background-image: url('${personajeSeleccionado}');"></div>`;
